@@ -26,8 +26,7 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
-#
-# TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
+
 
 
 # Application definition
@@ -41,6 +40,9 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'polls',
 )
+
+TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
+
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -69,6 +71,8 @@ DATABASES = {
         'PORT': '3306',
     }
 }
+
+#
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
