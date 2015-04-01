@@ -1,0 +1,6 @@
+pip3.4 install Django==1.7
+pip3.4 install mysql-python
+
+
+
+
