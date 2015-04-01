@@ -40,6 +40,10 @@ Install pip3.4 to ensure python3.4 is installed
 
 ```
 
+## update settings.py to the correct mysql end point and configurations
+
+
+
 ## creating the data models
 ```
 % python3.4 manage.py makemigrations
