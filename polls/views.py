@@ -9,18 +9,18 @@ from django.core.urlresolvers import reverse
 def index(request):
     latest_question_list = Question.objects.order_by('-pub_date')[:2]
     context = {'latest_question_list': latest_question_list}
-    return render(request,'polls/index.html',context)
+    return render(request,'polls/index.html', context)
 
 def detail(request, question_id):
     try:
         question = Question.objects.get(pk=question_id)
     except:
         raise Http404("Question does not exist")
-    return render(request,'polls/detail.html', {'question': question})
+    return render(request, 'polls/detail.html', {'question': question})
 
 def results(request, question_id):
-    response = "You're looking at the results of question %s."
-    return HttpResponse(response % question_id)
+    question = get_object_or_404(Question, pk=question_id)
+    return render(request, 'polls/results.html', {'question':question})
 
 def vote(request, question_id):
     p = get_object_or_404(Question, pk=question_id)
